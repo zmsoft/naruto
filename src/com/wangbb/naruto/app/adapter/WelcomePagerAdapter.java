@@ -63,6 +63,7 @@ public class WelcomePagerAdapter extends PagerAdapter implements AnimationListen
         View v = mListViews.get(position);
 
         if (position == 0) {
+
             iv1 = (ImageView) v.findViewById(R.id.ImageView01);
             // iv2 = (ImageView) v.findViewById(R.id.ImageView02);
             iv3 = (ImageView) v.findViewById(R.id.ImageView03);
