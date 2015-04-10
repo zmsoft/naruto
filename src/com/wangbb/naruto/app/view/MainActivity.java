@@ -108,7 +108,6 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
             @Override
             public void onClose() {
-                // TODO Auto-generated method stub
                 Toast.makeText(MainActivity.this, "关闭侧滑", Toast.LENGTH_SHORT).show();
             }
         });
@@ -129,7 +128,6 @@ public class MainActivity extends BaseActivity implements OnClickListener {
 
             @Override
             public void onClosed() {
-                // TODO Auto-generated method stub
                 Toast.makeText(MainActivity.this, "setOnClosedListener", Toast.LENGTH_SHORT).show();
             }
         });
