@@ -14,7 +14,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/CommonNoTitle" >
+        android:theme="@style/Theme.AppCompat" >
         <activity android:name="com.wangbb.naruto.app.view.MainActivity" >
         </activity>
         <activity android:name="com.wangbb.naruto.app.WelcomeActivity" >

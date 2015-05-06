@@ -7,13 +7,13 @@
  */
 package com.wangbb.naruto.app;
 
-import com.wangbb.naruto.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+
+import com.wangbb.naruto.R;
 
 /**
  * 所有页面基类
@@ -22,8 +22,7 @@ import android.os.Bundle;
  * create at 2014-3-20 下午2:49:29
  */
 public class BaseActivity extends Activity {
-    private static final String TAG = "BaseActivity";
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
