@@ -1,10 +1,9 @@
-package com.wangbb.naruto.app;
+package com.wangbb.naruto.app.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.wangbb.naruto.R;
-import com.wangbb.naruto.app.view.MainActivity;
 
 public class WelcomeActivity extends BaseActivity {
 

@@ -1,4 +1,4 @@
-package com.wangbb.naruto.app.view;
+package com.wangbb.naruto.app.activity;
 
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -6,7 +6,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 
 import com.wangbb.naruto.R;
-import com.wangbb.naruto.app.BaseActivity;
 
 public class MainActivity extends BaseActivity implements OnClickListener {
 

@@ -1,11 +1,11 @@
 /*
  * BaseActivity.java
- * classes : com.wangbb.naruto.app.BaseActivity
+ * classes : com.wangbb.naruto.app.activity.BaseActivity
  * @author 王彬彬
  * V 1.0.0
  * Create at 2014-3-20 下午2:49:29
  */
-package com.wangbb.naruto.app;
+package com.wangbb.naruto.app.activity;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,7 +17,7 @@ import com.wangbb.naruto.R;
 
 /**
  * 所有页面基类
- * com.wangbb.naruto.app.BaseActivity
+ * com.wangbb.naruto.app.activity.BaseActivity
  * @author 王彬彬 <br/>
  * create at 2014-3-20 下午2:49:29
  */
@@ -50,7 +50,13 @@ public class BaseActivity extends Activity {
         } 
         return false; 
     }
-    
+
+    @Override
+    public void finish() {
+        super.finish();
+
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -1,11 +1,12 @@
 <resources>
 
     <style name="AppBaseTheme" parent="Base.V14.Theme.AppCompat.Light">
-
+        <item name="android:background">@color/main_bg</item>
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
     <style name="AppThemeNotitle" parent="AppBaseTheme">
         <item name="android:windowNoTitle">true</item>
     </style>
-    
+
 </resources>
