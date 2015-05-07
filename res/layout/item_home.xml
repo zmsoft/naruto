@@ -6,8 +6,10 @@
 
     <TextView
         android:id="@+id/num"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:background="@android:color/holo_red_light"
         android:layout_gravity="center_horizontal"
         android:textColor="@android:color/black" />
 </LinearLayout>

@@ -13,7 +13,7 @@ import com.wangbb.naruto.common.Config;
 import com.wangbb.naruto.utils.Logger;
 
 /**
- * Created by wangbinbin on 15/5/7.
+ * Created by wangbinbin on 15/5/7.    From °×²Ë
  */
 public class Requester {
     private static void addRequest(int requestMethod, String tag,

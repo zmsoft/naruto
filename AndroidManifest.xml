@@ -18,14 +18,24 @@
         android:label="@string/app_name"
         android:screenOrientation="portrait"
         android:theme="@style/AppThemeNotitle">
-        <activity android:name=".app.activity.MainActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".app.activity.WelcomeActivity" android:screenOrientation="portrait">
+        <activity android:name=".app.activity.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".app.activity.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.activity.NewListViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.activity.NewGridViewActivty"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".app.activity.NewStaggeredGridActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
