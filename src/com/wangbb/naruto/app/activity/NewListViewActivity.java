@@ -1,14 +1,16 @@
 package com.wangbb.naruto.app.activity;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 
 import com.wangbb.naruto.R;
 import com.wangbb.naruto.app.adapter.HomeAdapter;
+import com.wangbb.naruto.utils.Utility;
 import com.wangbb.naruto.view.DividerItemDecoration;
 
 import java.util.ArrayList;
@@ -16,13 +18,14 @@ import java.util.ArrayList;
 /**
  * Created by wangbinbin on 15/5/7.
  */
-public class NewListViewActivity extends Activity {
+public class NewListViewActivity extends BaseFragmentActivity {
 
     private RecyclerView mRecyclerView;
     private ArrayList<String> list;
     private SwipeRefreshLayout mSwipeRefreshLayout;
     private LinearLayoutManager mLayoutManager;
     private boolean canLoadMore = true;
+    private Toolbar toolbar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,26 +38,22 @@ public class NewListViewActivity extends Activity {
         initData();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.new_listview, menu);
+        return true;
+    }
+
     private void setListerner() {
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                new Thread() {
+                mSwipeRefreshLayout.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            Thread.sleep(2000l);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                mSwipeRefreshLayout.setRefreshing(false);
-                            }
-                        });
+                        mSwipeRefreshLayout.setRefreshing(false);
                     }
-                }.start();
+                }, 3000);
             }
         });
 
@@ -79,6 +78,14 @@ public class NewListViewActivity extends Activity {
     private void initView() {
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swiperefreshlayout);
         mSwipeRefreshLayout.setColorSchemeColors(Color.RED, Color.BLUE, Color.YELLOW);
+//        mSwipeRefreshLayout.setProgressBackgroundColor(R.color.primary_dark_material_dark);
+        mSwipeRefreshLayout.setProgressViewOffset(false, Utility.dip2px(1), Utility.dip2px(80));
+        //下拉刷新距离对应系数  越大越难下拉
+//        mSwipeRefreshLayout.setDistanceToTriggerSync(80);
+        mSwipeRefreshLayout.setHorizontalFadingEdgeEnabled(true);
+        mSwipeRefreshLayout.setHapticFeedbackEnabled(true);
+        mSwipeRefreshLayout.setHasTransientState(true);
+        mSwipeRefreshLayout.setHovered(true);
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
@@ -88,6 +95,8 @@ public class NewListViewActivity extends Activity {
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(new HomeAdapter(this, list));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
     protected void initData() {

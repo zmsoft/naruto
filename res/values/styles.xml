@@ -1,10 +1,13 @@
 <resources>
 
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
-        <item name="android:background">@color/main_bg</item>
+        <item name="android:windowBackground">@color/main_bg</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:screenOrientation">portrait</item>
         <item name="android:listDivider">@drawable/list_divider</item>
+        <item name="colorPrimary">#339999</item>
+        //状态栏颜色
+        <item name="colorPrimaryDark">#339999</item>
     </style>
 
     <style name="AppThemeNotitle" parent="AppBaseTheme">
