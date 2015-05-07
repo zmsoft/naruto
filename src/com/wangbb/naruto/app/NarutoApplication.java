@@ -10,6 +10,9 @@ import android.support.v4.util.LruCache;
 import android.util.DisplayMetrics;
 import android.view.Display;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -29,27 +32,28 @@ public class NarutoApplication extends Application {
     // 为了实现每次使用该类时不创建新的对象而创建的静态对象
     private static NarutoApplication application;
     private DisplayMetrics displayMetrics = null;
-    // 构造方法
-
-    public synchronized static NarutoApplication getInstance() {
-        return application;
-    }
 
     //image memory cache
     private LruCache<String, Bitmap> appBitmapCache = null;
 
+    public static RequestQueue mVolleyQueue;
 
     private Handler handler = new Handler();
 
+    // 构造方法
+    public synchronized static NarutoApplication getInstance() {
+        return application;
+    }
 
     @Override
     public void onCreate() {
-
         super.onCreate();
         if (appContext == null) {
             appContext = getApplicationContext();
         }
         application = this;
+
+        mVolleyQueue = Volley.newRequestQueue(this);
     }
 
     @Override

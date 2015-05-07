@@ -17,5 +17,7 @@ public class Config {
 
     //是否调试模式
     public static boolean isDebug = true;
-    
+
+    //接口
+    public static String SERVER_ADDR = "http://api.peiyinxiu.com/";
 }

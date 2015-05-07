@@ -15,6 +15,7 @@ public class WelcomeActivity extends BaseFragmentActivity {
 //        initViews();
 //        startAnim();
         startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+        finish();
     }
 
     private void initViews() {
