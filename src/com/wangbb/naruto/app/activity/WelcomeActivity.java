@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import com.wangbb.naruto.R;
 
-public class WelcomeActivity extends BaseActivity {
+public class WelcomeActivity extends BaseFragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

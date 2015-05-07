@@ -7,7 +7,7 @@ import android.view.View.OnClickListener;
 
 import com.wangbb.naruto.R;
 
-public class MainActivity extends BaseActivity implements OnClickListener {
+public class MainActivity extends BaseFragmentActivity implements OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
